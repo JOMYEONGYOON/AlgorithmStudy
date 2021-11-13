@@ -19,7 +19,6 @@ class Algorithm5 {
                 c[right_len] = tmp;
                 left_len++;
                 right_len--;
-
             }
         }
         return String.valueOf(c);

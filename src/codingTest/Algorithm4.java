@@ -21,7 +21,7 @@ class Algorithm4 {
         for (int i = 0; i < n; i++) {
             str[i] = scanner.next();
         }
-        for(String result : algorithm4.solution(n, str)){
+        for (String result : algorithm4.solution(n, str)) {
             System.out.println(result);
         }
 
