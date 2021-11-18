@@ -19,10 +19,10 @@ class Algorithm7 {
     }
 
     public static void main(String[] args) {
-        Algorithm7 Algorithm7 = new Algorithm7();
+        Algorithm7 algorithm = new Algorithm7();
         Scanner scanner = new Scanner(System.in);
         String str = scanner.next();
-        System.out.println(Algorithm7.solution(str));
+        System.out.println(algorithm.solution(str));
 
     }
 
