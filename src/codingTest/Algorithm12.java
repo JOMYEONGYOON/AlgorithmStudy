@@ -5,7 +5,7 @@ import java.util.Scanner;
 class Algorithm12 {
     public String solution(int cnt, String str2) {
         String result = "";
-        for(int i=0;i<str2.length();i++){
+        for(int i=0;i<cnt;i++){
             String tmp = str2.substring(0,7).replace('#','1').replace('*','0');
             int num = Integer.parseInt(tmp,2);
             result += (char)num;
