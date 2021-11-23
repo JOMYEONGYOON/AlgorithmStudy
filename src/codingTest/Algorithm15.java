@@ -4,17 +4,17 @@ import java.util.Scanner;
 
 class Algorithm15 {
     public String solution(int[] a, int[] b, int n) {
-        String result = "";
+        StringBuilder result = new StringBuilder();
         for (int i = 0; i < n; i++) {
             if ((a[i] == 1 && b[i] == 3) || (a[i] == 2 && b[i] == 1) || (a[i] == 3 && b[i] == 2)) {
-                result += "A";
+                result.append("A");
             } else if (a[i] == b[i]) {
-                result += "D";
+                result.append("D");
             }else {
-                result += "B";
+                result.append("B");
             }
         }
-        return result;
+        return result.toString();
     }
 
     public static void main(String[] args) {
@@ -25,8 +25,14 @@ class Algorithm15 {
         int[] b = new int[n];
         for (int i = 0; i < n; i++) {
             a[i] = scanner.nextInt();
+        }
+        for (int i = 0; i < n; i++) {
             b[i] = scanner.nextInt();
         }
-        System.out.println(algorithm.solution(a, b, n));
+        for (char result: algorithm.solution(a, b, n).toCharArray()
+             ) {
+            System.out.println(result);
+        }
+
     }
 }
