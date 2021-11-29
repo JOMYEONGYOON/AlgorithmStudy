@@ -1,14 +1,19 @@
 package codingTest;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 class Algorithm19 {
 
     public int solution(int n, int[] a) {
-        int result = 0;
-
-
+        int result = 0, cnt = 0;
+        for (int i = 0; i < n ; i++) {
+            if (a[i] == 1) {
+                cnt++;
+                result += cnt;
+            } else {
+                cnt = 0;
+            }
+        }
         return result;
     }
 
@@ -20,8 +25,7 @@ class Algorithm19 {
         for (int i = 0; i < n; i++) {
             a[i] = scanner.nextInt();
         }
-        algorithm.solution(n, a);
-        System.out.println();
+        System.out.print(algorithm.solution(n, a));
 
     }
 }
