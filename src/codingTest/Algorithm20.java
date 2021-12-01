@@ -5,7 +5,7 @@ import java.util.Scanner;
 class Algorithm20 {
 
     public int[] solution(int n, int[] a) {
-        int result[] = new int[n];
+        int[] result = new int[n];
         for (int i = 0; i < n; i++) {
             for (int j = 1; j < n; j++) {
                 int cnt = 1;
