@@ -8,8 +8,8 @@ class Algorithm20 {
         int[] result = new int[n];
         for (int i = 0; i < n; i++) {
             int cnt = 1;
-            for (int j = 0; j < a.length; j++) {
-                if (a[i] < a[j]) {
+            for (int k : a) {
+                if (a[i] < k) {
                     cnt++;
                 }
                 result[i] = cnt;
