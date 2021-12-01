@@ -7,12 +7,12 @@ class Algorithm20 {
     public int[] solution(int n, int[] a) {
         int[] result = new int[n];
         for (int i = 0; i < n; i++) {
-            for (int j = 1; j < n; j++) {
-                int cnt = 1;
-                if (a[i] > a[j]) {
+            int cnt = 1;
+            for (int j = 0; j < a.length; j++) {
+                if (a[i] < a[j]) {
                     cnt++;
                 }
-                a[i] = cnt;
+                result[i] = cnt;
             }
         }
         return result;
@@ -28,7 +28,7 @@ class Algorithm20 {
         }
         for (int x : algorithm.solution(n, a)
         ) {
-            System.out.println(x);
+            System.out.print(x + " ");
         }
 
     }
