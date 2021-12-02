@@ -6,8 +6,8 @@ class Algorithm21 {
 
     public int solution(int n, int[][] a) {
         int result = Integer.MIN_VALUE;
-        int sum1 = 0;
-        int sum2 = 0;
+        int sum1;
+        int sum2;
         for (int i = 0; i < n; i++) {
             sum1 = 0;
             sum2 = 0;
