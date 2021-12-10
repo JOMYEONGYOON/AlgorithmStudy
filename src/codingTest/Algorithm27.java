@@ -6,14 +6,15 @@ import java.util.Scanner;
 class Algorithm27 {
 
     public int solution(int n, int m, int[] arr) {
-        int result = 0;
-        int max = Integer.MIN_VALUE;
-        for(int i=0;i<n-2;i++){
-            int i1 = arr[i] + arr[i + 1] + arr[i + 2];
-            if(i1 > max) {
-                max = i1;
-                result = max;
-            }
+        int result;
+        int sum = 0;
+        for(int i=0;i<m;i++){
+            sum+= arr[i];
+        }
+        result = sum;
+        for(int i=m;i<n;i++){
+              sum+= arr[i]-arr[i-m];
+              if(result < sum) result = sum;
         }
         return result;
 }
