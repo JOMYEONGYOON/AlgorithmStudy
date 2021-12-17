@@ -11,10 +11,13 @@ class Algorithm33 {
         HashMap<Character,Integer> hashMap = new HashMap<>();
         for(char x : str1.toCharArray()) {
             hashMap.put(x,hashMap.getOrDefault(x,0)+1);
+            System.out.print(hashMap.get(x) + " ----------------------");
         }
         for (char b: str2.toCharArray()) {
+            System.out.print(hashMap.get(b) + " ");
             if(!hashMap.containsKey(b) || hashMap.get(b) == 0) return "NO";
             hashMap.put(b, hashMap.get(b)-1);
+
         }
 
         return result;
