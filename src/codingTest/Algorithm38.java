@@ -1,26 +1,25 @@
 package codingTest;
 
-import java.util.Collections;
 import java.util.Scanner;
 import java.util.Stack;
-import java.util.TreeSet;
 
 
 class Algorithm38 {
 
     public String solution(String str) {
-        String result = "YES";
+        StringBuilder result = new StringBuilder();
         Stack<Character> stack = new Stack<>();
         for(char x : str.toCharArray()) {
-            if(x == '('){
+            if(x == ')'){
+                while(stack.pop() != '(');
+            }else {
                 stack.push(x);
-            }else{
-                if(stack.isEmpty())  return "NO";
-                stack.pop();
             }
         }
-        if(!stack.isEmpty()) return "NO";
-        return result;
+        for (Character character : stack) {
+            result.append(character);
+        }
+        return result.toString();
     }
 
     public static void main(String[] args) {
