@@ -7,38 +7,30 @@ import java.util.Scanner;
 
 class Algorithm45 {
 
-    public int solution(int n, int m, int[] arr){
-        int result=0;
-        Queue<Person> Q=new LinkedList<>();
-        for(int i=0; i<n; i++){
-            Q.offer(new Person(i, arr[i]));
-        }
-        while(!Q.isEmpty()){
-            Person tmp=Q.poll();
-            for(Person x : Q){
-                if(x.priority>tmp.priority){
-                    Q.offer(tmp);
-                    tmp=null;
-                    break;
-                }
+    public int[] solution(int n,int[] arr){
+        for(int i=0;i<n-1;i++){
+            int idx = i;
+            for(int j=i+1; j<n; j++){
+                if(arr[j]<arr[idx]) idx =j;
             }
-            if(tmp!=null){
-                result++;
-                if(tmp.id==m) return result;
-            }
+            int tmp = arr[i];
+            arr[i] = arr[idx];
+            arr[idx] = tmp;
         }
-        return result;
+        return arr;
     }
 
     public static void main(String[] args) {
-        Algorithm44 algorithm = new Algorithm44();
+        Algorithm45 algorithm = new Algorithm45();
         Scanner in = new Scanner(System.in);
         int n=in.nextInt();
-        int m=in.nextInt();
         int[] arr = new int[n];
         for(int i=0; i<n; i++){
             arr[i]=in.nextInt();
         }
-        System.out.println(algorithm.solution(n, m, arr));
+        for (int x: algorithm.solution(n,arr)
+             ) {
+            System.out.print(x + " ");
+        }
     }
 }
