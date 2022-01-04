@@ -8,20 +8,20 @@ public class B17413 {
         Scanner sc = new Scanner(System.in);
 
         Stack<Character> stack = new Stack<>();
-        int check = 0; // 태그안인지 아닌지 체크.
+        boolean check = true; // 태그안인지 아닌지 체크
         String input = sc.nextLine();
         StringBuilder result = new StringBuilder();
 
         for(char ch : input.toCharArray()) {
             if(ch == '<') {
-                check+=1; // 태그 안을 의미.
-                // 태그 전까지의 문자 뒤집기.
+                check=false; // 태그 안을 의미
+                // 태그 전까지의 문자 뒤집기
                 while(!stack.isEmpty()) {
                     result.append(stack.pop());
                 }
                 result.append("<");
             } else if(ch == '>') {
-                check-=1; // 태그 탈출.
+                check = true; // 태그 탈출
                 result.append(">");
             } else if(ch == ' ') {
                 // 공백 전까지의 문자 뒤집기.
@@ -29,7 +29,7 @@ public class B17413 {
                     result.append(stack.pop());
                 result.append(" ");
             } else {
-                if(check == 0) // 태그 밖
+                if(check) // 태그 밖
                     stack.push(ch);
                 else // 태그 안.
                     result.append(ch);
